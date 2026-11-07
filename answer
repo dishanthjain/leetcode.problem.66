@@ -1,0 +1,22 @@
+Code:
+
+class Solution {
+public:
+    vector<int> plusOne(vector<int>& digits) {
+        for (int i = digits.size() - 1; i >= 0; i--) {
+            if (digits[i] < 9) {
+                digits[i]++;
+                return digits;
+            }
+
+            digits[i] = 0;
+        }
+
+        digits.insert(digits.begin(), 1);
+        return digits;
+    }
+};
+
+Explanation:
+
+We start from the last digit and add one. If a digit is 9, it becomes 0 and the carry moves to the previous digit. If every digit is 9, we insert 1 at the beginning.
